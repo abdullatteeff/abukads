@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="login-signup.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="dropdown.css">
+<title>Login</title>
+</head>
+
+<body>
+    <!-- Navigation bar and menu starts here -->
+    <div class="navbar">
+    <div class="menu-container">
+        <div class="menu">
+
+            <div class="dropdown">
+                <button class="dropbtn textdeco">Tutorials
+                <i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+            <a href="" target="_self">Arithmetics</a>
+            <a href="" target="_self">Algebra</a>
+            <a href="" target="_self">Geometry and Mensuration</a>
+            <a href="" target="_self">Statistics</a>
+            <a href="" target="_self">Trigonometry</a>
+            <a href="" target="_self">Further Mathematics</a>
+            <a href="" target="_self">Exams Prep</a>
+            </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn textdeco">
+            <div class="date">
+                <p id="demo"></p>
+
+                <script>
+                var d = new Date();
+                document.getElementById("demo").innerHTML = d.toDateString();
+                </script>
+                <i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                <a href="" target="_self">Word of the Day</a>
+                <a href="" target="_self">Quick Quizzes</a>
+                </div>
+            </div>
+
+            <!-- dropdown-content -->
+            <div class="dropdown">
+                <button class="dropbtn textdeco">User
+                <i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+            <a href="signup.html" target="_self">Sign Up</a>
+            <a href="login.html" target="_self">Login</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+         <div class='header'>
+        <div class='logo'><a href="index.html"><img src="/img/stclares-logo.png" alt="logo"/>
+        </a></div>
+        </div>
+    </div>
+
+ <!-- The login form -->
+        <form class="modal-content animate" action="">
+          <div class="imgcontainer">
+            <img src="/img/img_avatar2.png" alt="Avatar" class="avatar">
+          </div>
+      
+          <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+      
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+              
+            <button type="submit">Login</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+      
+          <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+        </form>
+      </div>
+      
+      <script>
+      // Get the modal
+      var modal = document.getElementById('id01');
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+      </script>
+
+
+<!-- Here is the footer of the page. It is fixed to ensure that it remains at the bottom of the page -->
+    <div class='footer footer-fixed'>
+        <div class='footer-item footer-side'></div>
+        <div class='footer-item footer-middle'>
+             <div>Designed by Abuka Designs</div>
+             <div>&#169; <span id="dem"></span>
+                <script>
+                var d = new Date();
+                document.getElementById("dem").innerHTML = d.getFullYear();
+                </script>   
+                </div>
+        </div>
+        <div class='footer-item footer-side'></div>
+    </div>
+</body>
+      
+    </html>
+    
