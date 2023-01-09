@@ -140,13 +140,12 @@ body {
 }
 @media screen and (max-width: 575px) {
     .learntocode {
-    font-size: 23px;
-    font-weight: 300px;
+    font-size: 15px;
     text-align: left;
     }
 
     .for-free {
-        font-size: 17px;
+        font-size: 10px;
         text-align: left;
     }
 
