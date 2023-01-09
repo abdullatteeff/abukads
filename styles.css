@@ -129,21 +129,33 @@ body {
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 575px)  {
+@media screen and (max-width: 300px)  {
     .menu {
         justify-content: space-evenly;
     }
 }
-/* @media screen and (min-width: 575px) {
-    .learntocode {
-    font-size: 55px;
+@media screen and (max-width: 575px) {
+    .learntocode, .for-free {
+    font-size: 35px;
     font-weight: 300px;
-    text-align: center;
-} */
+    text-align: justify;
+    }
 
-/* .for-free {
-    font-size: 23px;
-    color: pink;
-    font-weight: 700;
+    .for-free {
+        font-size: 17px;
+    }
 
-} */
+}
+
+@media screen and (orientation: landscape) and (max-width: 575px){
+    .learntocode, .for-free {
+        font-size: 25px;
+        font-weight: 300px;
+        text-align: justify;
+        }
+    
+        .for-free {
+            font-size: 17px;
+        }
+    
+}
