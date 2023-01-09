@@ -67,24 +67,26 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 50px;
+    padding: 30px;
     flex-direction: column;
 }
 
 .learntocode {
-    font-size: 25px;
+    font-size: 40px;
     color: white;
     font-weight: 300px;
     text-align: center;
+    letter-spacing: 5px;
      
 }
 
 .for-free {
-    font-size: 17px;
+    font-size: 23px;
     color: pink;
     font-weight: 700;
     text-align: center;
     padding-top: 20px;
+    letter-spacing: 7px;
 }
 
 .footer {
@@ -98,7 +100,7 @@ body {
         }
 
 .footer-item {
-    border: 1px solid #fff;
+    border: none;
     background-color: rgb(66, 165, 132);
     flex: 1;
     align-items: center;
@@ -122,40 +124,44 @@ body {
 
 .footer-fixed {
 
-        position: fixed;
+        /* position: fixed; */
+        position: absolute;
         bottom: 0;
         border: none;
 
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+/*Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+
 @media screen and (max-width: 300px)  {
     .menu {
         justify-content: space-evenly;
     }
 }
 @media screen and (max-width: 575px) {
-    .learntocode, .for-free {
-    font-size: 35px;
+    .learntocode {
+    font-size: 23px;
     font-weight: 300px;
-    text-align: justify;
+    text-align: left;
     }
 
     .for-free {
         font-size: 17px;
+        text-align: left;
     }
 
 }
 
-@media screen and (orientation: landscape) and (max-width: 575px){
+/* @media screen and (orientation: landscape) and (max-width: 575px){
     .learntocode, .for-free {
-        font-size: 25px;
+        font-size: 23px;
         font-weight: 300px;
         text-align: justify;
+      
         }
     
         .for-free {
             font-size: 17px;
         }
     
-}
+} */
