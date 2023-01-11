@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Math Exam Prep Webpage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #container {
+      width: 500px;
+      margin: 0 auto;
+    }
+    #main-content {
+      background-color: #f8f8f8;
+      padding: 20px;
+    }
+    .section-title {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    .section-content {
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="main-content">
+      <div class="section-title">
+        Arithmetic Questions
+      </div>
+      <div class="section-content">
+        <button id="arithmetic-generate-questions">Generate Questions</button>
+       <div id= "arithmetic-questions"></div>
+        <button id="arithmetic-check-answers">Check Answers</button>
+        <div id="arithmetic-answers"></div>
+      </div>
+      <div class="section-title">
+        Algebra Questions
+      </div>
+      <div class="section-content">
+        <button id="algebra-generate-questions">Generate Questions</button>
+        <div id="algebra-questions"></div>
+        <button id="algebra-check-answers">Check Answers</button>
+        <div id="algebra-answers"></div>
+      </div>
+      <div class="section-title">
+        Geometry and Mensuration
+      </div>
+      <div class="section-content">
+        <button id="geometry-generate-questions">Generate Questions</button>
+        <div id="geometry-questions"></div>
+        <button id="geometry-check-answers">Check Answers</button>
+        <div id="geometry-answers"></div>continue form <div id="statistics-questions"></div>
+        <button id="statistics-check-answers">Check Answers</button>
+        <div id="statistics-answers"></div>
+      </div>
+      <div class="section-title">
+        Statistics and Probability
+      </div>
+      <div class="section-content">
+        <button id="statistics-generate-questions">Generate Questions</button>
+        <div id="statistics-questions"></div>
+        <button id="statistics-check-answers">Check Answers</button>
+        <div id="statistics-answers"></div>
+      </div>
+      <div class="section-title">
+        Trigonometry
+      </div>
+      <div class="section-content">
+        <button id="trigonometry-generate-questions">Generate Questions</button>
+        <div id="trigonometry-questions"></div>
+        <button id="trigonometry-check-answers">Check Answers</button>
+        <div id="trigonometrycontinue from <div id= "trigonometry-answers"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    //Generate Arithmetic questions
+    let arithmeticQuestions = [];
+    let arithmeticAnswers = [];
+    document.querySelector('#arithmetic-generate-questions').addEventListener('click', function(){
+      //generate random question
+      let randomNumber1 = Math.floor(Math.random() * 10) + 1;
+      let randomNumber2 = Math.floor(Math.random() * 10) + 1;
+      let randomOperator = Math.floor(Math.random() * 4) + 1;
+      let arithmeticQuestion = '';
+      let arithmeticAnswer = 0;
+      switch(randomOperator) {
+        case 1:
+          arithmeticQuestion = randomNumber1 + ' + ' + randomNumber2;
+          arithmeticAnswer = randomNumber1 + randomNumber2;
+          break;
+        case 2:
+          arithmeticQuestion = randomNumber1 + ' - ' + randomNumber2;
+          arithmeticAnswer = randomNumber1 - randomNumber2;
+          break;
+        case 3:
+          arithmeticQuestion = randomNumber1 + ' * ' + randomNumber2;
+          arithmeticAnswer = randomNumber1 * randomNumber2;
+          break;
+        case 4:
+          arithmeticQuestion = randomNumber1 + ' / ' + randomNumber2;
+          arithmeticAnswer = randomNumber1 / randomNumber2;
+          break;
+      }
+      arithmeticQuestions.push(arithmeticQuestion);
+      arithmeticAnswers.push(arithmeticAnswer);
+      //display questions
+      let htmlQuestions = '';
+      arithmeticQuestions.forEach(function(question, index) {
+        htmlQuestions += '<p>' + (index + 1) + '. ' + question + '</p>';
+      });
+      document.querySelector('#arithmetic-questions').innerHTML = htmlQuestions;
+    });
+
+    //check Arithmetic Answers
+    document.querySelector('#arithmetic-check-answers').addEventListener('click', function(){
+      let htmlAnswers = '';
+      arithmeticAnswers.forEach(function(answer, index) {
+        htmlAnswers += '<p>' + (index + 1) + '. ' + answer + '</p>';
+      });
+      document.querySelector('#arithmetic-answers').innerHTML = htmlAnswers;
+    });
+
+    //Generate Algebra questions
+    let algebraQuestions = [];
+    let algebraAnswers = [];
+    document.querySelector('#algebra-generate-questions').addEventListener('click', function(){
+      //generate random question
+      let randomNumber1 = Math.floor(Math.random() * 10) + 1;
+      let randomNumber2 = Math.floor(Math.random() * 10) + 1;
+      let randomNumber3 = Math.floor(Math.random() * 10) + 1;
+      let randomOperator = Math.floor(Math.random() * 4) + 1;
+      let algebraQuestion = '';
+      let algebraAnswer = 0;
+      switch(randomOperator) {
+        case 1:
+          algebraQuestion = randomNumber1 + ' + ' + randomNumber2 + ' + ' + randomNumber3;
+          algebraAnswer = randomNumber1 + randomNumber2 + randomNumber3;
+         break;
+        case 2:
+          algebraQuestion = randomNumber1 + ' - ' + randomNumber2 + ' - ' + randomNumber3;
+          algebraAnswer = randomNumber1 - randomNumber2 - randomNumber3;
+          break;
+        case 3:
+          algebraQuestion = randomNumber1 + ' * ' + randomNumber2 + ' * ' + randomNumber3;
+          algebraAnswer = randomNumber1 * randomNumber2 * randomNumber3;
+          break;
+        case 4:
+          algebraQuestion = randomNumber1 + ' / ' + randomNumber2 + ' / ' + randomNumber3;
+          algebraAnswer = randomNumber1 / randomNumber2 / randomNumber3;
+          break;
+      }
+      algebraQuestions.push(algebraQuestion);
+      algebraAnswers.push(algebraAnswer);
+      //display questions
+      let htmlQuestions = '';
+      algebraQuestions.forEach(function(question, index) {
+        htmlQuestions += '<p>' + (index + 1) + '. ' + question + '</p>';
+      });
+      document.querySelector('#algebra-questions').innerHTML = htmlQuestions;
+    });
+
+    //check Algebra Answers
+    document.querySelector('#algebra-check-answers').addEventListener('click', function(){
+      let htmlAnswers = '';
+      algebraAnswers.forEach(function(answer, index) {
+        htmlAnswers += '<p>' + (index + 1) + '. ' + answer + '</p>';
+      });
+      document.querySelector('#algebra-answers').innerHTML = htmlAnswers;
+    });
+
+    //Generate Geometry questions
+    let geometryQuestions = [];
+    let geometryAnswers = [];
+    document.querySelector('#geometry-generate-questions').addEventListener('click', function(){
+      //generate random question
+      let randomNumber1 = Math.floor(Math.random() * 10) + 1;
+      let randomNumber2 = Math.floor(Math.random() * 10) + 1;
+      let randomNumber3 = Math.floor(Math.random() * 10) + 1;
+      let randomOperator = Math.floor(Math.random() * 4) + 1;
+      let geometryQuestion = '';
+      let geometryAnswer = 0;
+      switch(randomOperator) {
+        case 1:
+          geometryQuestion = 'What is the area of a triangle with base ' + randomNumber1 + ' and height ' + randomNumber2;
+          geometryAnswer = (randomNumber1 * randomNumber2) / 2;
+          break;
+        case 2:
+          geometryQuestion = 'What is the perimeter of a square with side ' + randomNumber1;
+          geometryAnswer = randomNumber1 * 4;
+          break;
+        case 3:
+          geometryQuestion = 'What is the circumference of a circle with radius ' + randomNumber1;
+          geometryAnswer = 2 * Math.PI * randomNumber1;
+          break;
+        case 4:
+          geometryQuestion = 'What is the volume of a cube with side ' + randomNumber1;
+          geometryAnswer = randomNumber1 * randomNumber1 * randomNumber1;
+          break;
+      }
+      geometryQuestions.push(geometryQuestion);
+      geometryAnswers.push(geometryAnswer);
+      //display questions
+     let htmlQuestions = '';
+      geometryQuestions.forEach(function(question, index) {
+        htmlQuestions += '<p>' + (index + 1) + '. ' + question + '</p>';
+      });
+      document.querySelector('#geometry-questions').innerHTML = htmlQuestions;
+    });
+
+    //check Geometry Answers
+    document.querySelector('#geometry-check-answers').addEventListener('click', function(){
+      let htmlAnswers = '';
+      geometryAnswers.forEach(function(answer, index) {
+        htmlAnswers += '<p>' + (index + 1) + '. ' + answer + '</p>';
+      });
+      document.querySelector('#geometry-answers').innerHTML = htmlAnswers;
+    });
+
+    //Generate Statistics questions
+    let statisticsQuestions = [];
+    let statisticsAnswers = [];
+    document.querySelector('#statistics-generate-questions').addEventListener('click', function(){
+      //generate random question
+      let randomNumber1 = Math.floor(Math.random() * 10) + 1;
+      let randomNumber2 = Math.floor(Math.random() * 10) + 1;
+      let randomOperator = Math.floor(Math.random() * 4) + 1;
+      let statisticsQuestion = '';
+      let statisticsAnswer = 0;
+      switch(randomOperator) {
+        case 1:
+          statisticsQuestion = 'What is the mean of ' + randomNumber1 + ' and ' + randomNumber2;
+          statisticsAnswer = (randomNumber1 + randomNumber2) / 2;
+          break;
+        case 2:
+          statisticsQuestion = 'What is the median of ' + randomNumber1 + ' and ' + randomNumber2;
+          statisticsAnswer = (randomNumber1 + randomNumber2) / 2;
+          break;
+        case 3:
+          statisticsQuestion = 'What is the mode of ' + randomNumber1 + ' and ' + randomNumber2;
+          statisticsAnswer = (randomNumber1 === randomNumber2) ? randomNumber1 : 'NoMode';
+          break;
+        case 4:
+          statisticsQuestion = 'What is the range of ' + randomNumber1 + ' and ' + randomNumber2;
+          statisticsAnswer = Math.abs(randomNumber1 - randomNumber2);
+          break;
+      }
+      statisticsQuestions.push(statisticsQuestion);
+      statisticsAnswers.push(statisticsAnswer);
+      //display questions
+      let htmlQuestions = '';
+      statisticsQuestions.forEach(function(question, index) {
+        htmlQuestions += '<p>' + (index + 1) + '. ' + question + '</p>';
+      });
+      document.querySelector('#statistics-questions').innerHTML = htmlQuestions;
+    });
+
+    //check Statistics Answers
+    document.querySelector('#statistics-check-answers').addEventListener('click', function(){
+      let htmlAnswers = '';
+      statisticsAnswers.forEach(function(answer, index) {
+        htmlAnswers += '<p>' + (index + 1) + '. ' + answer + '</p>';
+      });
+      document.querySelector('#statistics-answers').innerHTML = htmlAnswers;
+    });
+
+    //Generate Trigonometry questions
+    let trigonometryQuestions = [];
+    let trigonometryAnswers = [];
+    document.querySelector('#trigonometry-generate-questions').addEventListener('click', function(){
+      //generate random question
+      let randomAngle = Math.floor(Math.random() * 90) + 1;
+      let randomOperator = Math.floor(Math.random() * 4) + 1;
+      let trigonometryQuestion = '';
+      let trigonometryAnswer = 0;
+      switch(randomOperator) {
+        case 1:
+          trigonometryQuestion = 'What is the sine of ' + randomAngle + '°';
+          trigonometryAnswer = Math.sin(randomAngle * (Math.PI / 180));
+          break;
+        case 2:
+          trigonometryQuestion = 'What is the cosine of ' + randomAngle + '°';
+          trigonometryAnswer = Math.cos(randomAngle * (Math.PI / 180));
+          break;
+        case 3:
+          trigonometryQuestion = 'What is the tangent of ' + randomAngle + '°';
+          trigonometryAnswer = Math.tan(randomAngle * (Math.PI / 180));
+          break;
+        case 4:
+          trigonometryQuestion = 'What is the cotangent of ' + randomAngle + '°';
+          trigonometryAnswer = 1 / Math.tan(randomAngle * (Math.PI / 180));
+          break;
+      }
+      trigonometryQuestions.push(trigonometryQuestion);
+      trigonometryAnswers.push(trigonometryAnswer);
+      //display questions
+      let htmlQuestions = '';
+      trigonometryQuestions.forEach(function(question, index) {
+        htmlQuestions += '<p>' + (index + 1) + '. ' + question + '</p>';
+      });
+      document.querySelector('#trigonometry-questions').innerHTML = htmlQuestions;
+    });
+
+    //check Trigonometry Answers
+	let answers = '';
+	document.querySelector('#trigonometry-check-answers').addEventListener('click', function(){ 
+	    answers = '';
+      trigonometryAnswers.forEach(function(answer, index) {
+        htmlAnswers += '<p>' + (index + 1) + '. ' + answer + '</p>';
+      });
+      document.querySelector('#trigonometry-answers').innerHTML = htmlAnswers;
+    });
+  </script>
+</body>
+</html>
