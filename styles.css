@@ -7,7 +7,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    overflow:scroll;
+    overflow-y: scroll;
     background-color: black;
 }
 
@@ -36,7 +36,7 @@ body {
 
 .textdeco {
     padding: 5px 0;
-   continue  font-weight: bold;
+   font-weight: bold;
 }
 
 .header {
@@ -74,6 +74,7 @@ body {
 
 .body-container {
     width: 100%; 
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -133,7 +134,7 @@ body {
 
 .footer-fixed {
 
-        position: relative;
+        position: fixed;
         bottom: 0;
         border: none;
 
@@ -169,7 +170,7 @@ body {
 
 @media only screen and (max-width: 500px) {
     .menu {
-        width: 200px;
+        width: 350px;
     }
     .columns {
         width: 100px;

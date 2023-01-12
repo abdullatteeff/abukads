@@ -1,19 +1,34 @@
-
+ 
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Math Exam Prep Webpage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8"/>
+        <title>Exams Prep</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="dropdown.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
+    
+    
+body {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #000;
+    color: #fff;
+    overflow: scroll;
+}
     #container {
-      width: 500px;
+      width: 100%;
+      max-width: 500px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: row;
     }
     #main-content {
-      background-color: #f8f8f8;
+      flex: 1;
+      background-color: #000;
+      color: #fff;
       padding: 20px;
     }
     .section-title {
@@ -23,13 +38,72 @@
     .section-content {
       padding: 10px 0;
     }
+    @media only screen and (max-width: 600px) {
+        #container{
+            flex-direction: column;
+        }
+        #main-content {
+            flex: 0;
+            width: 100%;
+        }
+    }
   </style>
+  
 </head>
 <body>
+<!-- Navigation bar and menu starts here -->
+    <div class="navbar">
+    <div class="menu-container">
+        <div class="menu">
+
+            <div class="dropdown">
+                <button class="dropbtn textdeco">Tutorials
+                <i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+            <a href="" target="_self">Arithmetics</a>
+            <a href="" target="_self">Algebra</a>
+            <a href="" target="_self">Geometry and Mensuration</a>
+            <a href="" target="_self">Statistics</a>
+            <a href="" target="_self">Trigonometry</a>
+            <a href="" target="_self">Further Mathematics</a>
+            <a href="examprep.html" target="_blank">Exams Prep</a>
+            </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn textdeco">
+            <div class="date">
+                <p id="demo"></p>
+
+                <script>
+                var d = new Date();
+                document.getElementById("demo").innerHTML = d.toDateString();
+                </script>
+                <i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                <a href="signup.html" target="_self">Word of the Day</a>
+                <a href="login.html" target="_self">Quick Quizzes</a>
+                </div>
+            </div>
+
+            <!-- dropdown-content -->
+            <div class="dropdown">
+                <button class="dropbtn textdeco">User
+                <i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+            <a href="signup.html" target="_self">Sign Up</a>
+            <a href="login.html" target="_self">Login</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
   <div id="container">
     <div id="main-content">
       <div class="section-title">
-        Arithmetic Questions
+        Arithmetic 
       </div>
       <div class="section-content">
         <button id="arithmetic-generate-questions">Generate Questions</button>
@@ -38,7 +112,7 @@
         <div id="arithmetic-answers"></div>
       </div>
       <div class="section-title">
-        Algebra Questions
+        Algebra 
       </div>
       <div class="section-content">
         <button id="algebra-generate-questions">Generate Questions</button>
@@ -47,18 +121,17 @@
         <div id="algebra-answers"></div>
       </div>
       <div class="section-title">
-        Geometry and Mensuration
+        Geometry and Mensuration 
       </div>
       <div class="section-content">
         <button id="geometry-generate-questions">Generate Questions</button>
         <div id="geometry-questions"></div>
         <button id="geometry-check-answers">Check Answers</button>
-        <div id="geometry-answers"></div>continue form <div id="statistics-questions"></div>
-        <button id="statistics-check-answers">Check Answers</button>
-        <div id="statistics-answers"></div>
+        <div id="geometry-answers"></div>
       </div>
+       
       <div class="section-title">
-        Statistics and Probability
+        Statistics
       </div>
       <div class="section-content">
         <button id="statistics-generate-questions">Generate Questions</button>
@@ -66,15 +139,7 @@
         <button id="statistics-check-answers">Check Answers</button>
         <div id="statistics-answers"></div>
       </div>
-      <div class="section-title">
-        Trigonometry
-      </div>
-      <div class="section-content">
-        <button id="trigonometry-generate-questions">Generate Questions</button>
-        <div id="trigonometry-questions"></div>
-        <button id="trigonometry-check-answers">Check Answers</button>
-        <div id="trigonometrycontinue from <div id= "trigonometry-answers"></div>
-      </div>
+
     </div>
   </div>
   <script>
@@ -268,52 +333,21 @@
       document.querySelector('#statistics-answers').innerHTML = htmlAnswers;
     });
 
-    //Generate Trigonometry questions
-    let trigonometryQuestions = [];
-    let trigonometryAnswers = [];
-    document.querySelector('#trigonometry-generate-questions').addEventListener('click', function(){
-      //generate random question
-      let randomAngle = Math.floor(Math.random() * 90) + 1;
-      let randomOperator = Math.floor(Math.random() * 4) + 1;
-      let trigonometryQuestion = '';
-      let trigonometryAnswer = 0;
-      switch(randomOperator) {
-        case 1:
-          trigonometryQuestion = 'What is the sine of ' + randomAngle + '°';
-          trigonometryAnswer = Math.sin(randomAngle * (Math.PI / 180));
-          break;
-        case 2:
-          trigonometryQuestion = 'What is the cosine of ' + randomAngle + '°';
-          trigonometryAnswer = Math.cos(randomAngle * (Math.PI / 180));
-          break;
-        case 3:
-          trigonometryQuestion = 'What is the tangent of ' + randomAngle + '°';
-          trigonometryAnswer = Math.tan(randomAngle * (Math.PI / 180));
-          break;
-        case 4:
-          trigonometryQuestion = 'What is the cotangent of ' + randomAngle + '°';
-          trigonometryAnswer = 1 / Math.tan(randomAngle * (Math.PI / 180));
-          break;
-      }
-      trigonometryQuestions.push(trigonometryQuestion);
-      trigonometryAnswers.push(trigonometryAnswer);
-      //display questions
-      let htmlQuestions = '';
-      trigonometryQuestions.forEach(function(question, index) {
-        htmlQuestions += '<p>' + (index + 1) + '. ' + question + '</p>';
-      });
-      document.querySelector('#trigonometry-questions').innerHTML = htmlQuestions;
-    });
-
-    //check Trigonometry Answers
-	let answers = '';
-	document.querySelector('#trigonometry-check-answers').addEventListener('click', function(){ 
-	    answers = '';
-      trigonometryAnswers.forEach(function(answer, index) {
-        htmlAnswers += '<p>' + (index + 1) + '. ' + answer + '</p>';
-      });
-      document.querySelector('#trigonometry-answers').innerHTML = htmlAnswers;
-    });
   </script>
+
+  <!-- Here is the footer of the page. It is fixed to ensure that it remains at the bottom of the page -->
+    <div class='footer footer-fixed'>
+        <div class='footer-item footer-side'></div>
+        <div class='footer-item footer-middle'>
+             <div>Designed by Abuka Designs.</div>
+             <div>&#169; <span id="dem"></span>
+                <script>
+                var d = new Date();
+                document.getElementById("dem").innerHTML = d.getFullYear();
+                </script>   
+                </div>
+        </div>
+        <div class='footer-item footer-side'></div>
+    </div>
 </body>
 </html>
